@@ -1,4 +1,4 @@
 # https://developers.home-assistant.io/docs/add-ons/repository#repository-configuration
-name: SimpleX SMP Server Add-on Repository
+name: SimpleX Add-ons Repository
 url: "https://github.com/ed-asriyan/hassio-simplex"
-maintainer: Ed Asriyan <github@asriyan.me>
+maintainer: Ed Asriyan <hassio-simplex@asriyan.me>
