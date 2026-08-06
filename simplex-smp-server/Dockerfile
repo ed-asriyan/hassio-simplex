@@ -1,5 +1,5 @@
 # https://developers.home-assistant.io/docs/add-ons/configuration#add-on-dockerfile
-FROM simplexchat/smp-server:v6.5.0
+FROM simplexchat/smp-server:v7.0.0
 
 LABEL \
     org.opencontainers.image.title="Home Assistant Add-on: SimpleX SMP Server" \
