@@ -26,6 +26,7 @@ options:
     enabled: false
     certfile: fullchain.pem
     keyfile: privkey.pem
+  information: {}
 schema:
   addr: str
   port: int
@@ -37,4 +38,14 @@ schema:
     enabled: bool
     certfile: str
     keyfile: str
+  information:
+    server_country: match(^[A-Z]{2}$)?
+    operator: str?
+    operator_country: match(^[A-Z]{2}$)?
+    website: url?
+    admin_email: email?
+    complaints_email: email?
+    hosting: str?
+    hosting_country: match(^[A-Z]{2}$)?
+    hosting_type: list(virtual|dedicated|colocation|owned)?
 image: "ghcr.io/ed-asriyan/hassio-simplex-xftp-server"

@@ -9,6 +9,9 @@ RESTORE_MESSAGES=$(jq -r 'if .restore_messages then "on" else "off" end' /data/o
 EXPIRE_MESSAGES_DAYS=$(jq -r '.expire_messages_days' /data/options.json)
 EXPIRE_NTFS_HOURS=$(jq -r '.expire_ntfs_hours' /data/options.json)
 
+# Optional server information, one "key = value" line per non-empty field
+INFORMATION=$(jq -r '(.information // {}) | to_entries[] | select(.value != null and .value != "") | "\(.key) = \(.value | tostring | gsub("[\r\n]"; " "))"' /data/options.json)
+
 # Define directories
 CONFIG_DIR=/etc/opt/simplex
 STATE_DIR=/var/opt/simplex
@@ -30,7 +33,7 @@ if [ -n "$PASS" ]; then
 else
     CREATE_PASSWORD_LINE=""
 fi
-export ADDR PORT NEW_QUEUES RESTORE_MESSAGES EXPIRE_MESSAGES_DAYS EXPIRE_NTFS_HOURS CREATE_PASSWORD_LINE
+export ADDR PORT NEW_QUEUES RESTORE_MESSAGES EXPIRE_MESSAGES_DAYS EXPIRE_NTFS_HOURS CREATE_PASSWORD_LINE INFORMATION
 envsubst < /smp-server.ini.tpl > "$INI"
 
 # Print server address
