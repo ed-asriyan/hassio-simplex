@@ -19,3 +19,5 @@ storage_quota = ${QUOTA}
 
 [INACTIVE_CLIENTS]
 disconnect = off
+
+${WEB_SECTION}

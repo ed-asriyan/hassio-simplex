@@ -32,9 +32,12 @@ profile example flags=(attach_disconnected,mediate_deleted) {
   /var/opt/simplex-xftp/** rw,
   /srv/xftp/** rw,
 
+  # Certificates shared by the Let's Encrypt app
+  /ssl/** r,
+
   # Entrypoint and system reads
-  /entrypoint.sh r,
-  /etc/ssl/certs/** r,
+  /entrypoint.sh rix,
+  /etc/ssl/** r,
   /etc/resolv.conf r,
   /etc/hosts r,
   /proc/sys/kernel/hostname r,
