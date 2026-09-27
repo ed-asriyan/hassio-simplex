@@ -1,19 +1,4 @@
 configuration:
-  ssl:
-    name: SSL
-    description: >-
-      Optional HTTPS for the server information page, using a certificate from
-      the Let's Encrypt app. See the "SSL" section in the Documentation tab.
-    fields:
-      enabled:
-        name: Enable SSL
-        description: Serve the server information page over HTTPS.
-      certfile:
-        name: Public certificate
-        description: Certificate file name in the /ssl folder, the same as "certfile" in the Let's Encrypt app.
-      keyfile:
-        name: Private key
-        description: Private key file name in the /ssl folder, the same as "keyfile" in the Let's Encrypt app.
   information:
     name: Server information
     description: >-

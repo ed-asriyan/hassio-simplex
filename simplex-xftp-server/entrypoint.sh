@@ -14,6 +14,9 @@ KEYFILE=/ssl/$(jq -r '.ssl.keyfile' /data/options.json)
 # How often to check whether the certificate was renewed, seconds
 CERT_CHECK_INTERVAL=${CERT_CHECK_INTERVAL:-3600}
 
+# Optional server information, one "key = value" line per non-empty field
+INFORMATION=$(jq -r '(.information // {}) | to_entries[] | select(.value != null and .value != "") | "\(.key) = \(.value | tostring | gsub("[\r\n]"; " "))"' /data/options.json)
+
 # Define directories
 CONFIG_DIR=/etc/opt/simplex-xftp
 STATE_DIR=/var/opt/simplex-xftp
@@ -62,7 +65,7 @@ if [ -n "$PASS" ]; then
 else
     CREATE_PASSWORD_LINE=""
 fi
-export ADDR PORT QUOTA EXPIRE_FILES_HOURS NEW_FILES FILES_DIR CREATE_PASSWORD_LINE WEB_SECTION
+export ADDR PORT QUOTA EXPIRE_FILES_HOURS NEW_FILES FILES_DIR CREATE_PASSWORD_LINE WEB_SECTION INFORMATION
 envsubst < /file-server.ini.tpl > "$INI"
 
 # Print server address

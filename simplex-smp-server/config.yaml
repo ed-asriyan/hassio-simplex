@@ -23,6 +23,7 @@ options:
   restore_messages: true
   expire_messages_days: 21
   expire_ntfs_hours: 24
+  information: {}
 schema:
   addr: str
   port: int
@@ -31,4 +32,14 @@ schema:
   restore_messages: bool
   expire_messages_days: int
   expire_ntfs_hours: int
+  information:
+    server_country: match(^[A-Z]{2}$)?
+    operator: str?
+    operator_country: match(^[A-Z]{2}$)?
+    website: url?
+    admin_email: email?
+    complaints_email: email?
+    hosting: str?
+    hosting_country: match(^[A-Z]{2}$)?
+    hosting_type: list(virtual|dedicated|colocation|owned)?
 image: "ghcr.io/ed-asriyan/hassio-simplex-smp-server"

@@ -22,3 +22,21 @@
 | `restore_messages` | Yes | `true` | Save and restore undelivered messages across server restarts |
 | `expire_messages_days` | Yes | `21` | Automatically delete undelivered messages after this many days. |
 | `expire_ntfs_hours` | Yes | `24` | Automatically delete undelivered notifications after this many hours. |
+| `information` | No | | Optional public information about who operates the server. See [Server information](#server-information). |
+
+### Server information
+Public information about who operates the server. It is written to the `[INFORMATION]` section of the server configuration. All fields are optional: leave a field empty to omit it.
+
+| Field | Description |
+| ----- | ----------- |
+| `server_country` | Country where the server is located, as an [ISO 3166](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) 2-letter code, e.g. `DE`. |
+| `operator` | Name of the organization or person operating the server. |
+| `operator_country` | Country of the operator, as an ISO 3166 2-letter code. |
+| `website` | Website of the operator, e.g. `https://example.com`. |
+| `admin_email` | Email for administrative contacts. |
+| `complaints_email` | Email for complaints and feedback. |
+| `hosting` | Name of the hosting provider, e.g. your own name when self-hosting at home. |
+| `hosting_country` | Country of the hosting provider, as an ISO 3166 2-letter code. |
+| `hosting_type` | `virtual` (VPS), `dedicated` (rented physical server), `colocation` (own server in a data center) or `owned` (own server at own premises, e.g. Home Assistant at home). |
+
+The `source_code` field required by the AGPLv3 license is always set to `https://github.com/simplex-chat/simplexmq`.

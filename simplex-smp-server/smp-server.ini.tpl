@@ -1,3 +1,7 @@
+[INFORMATION]
+source_code = https://github.com/simplex-chat/simplexmq
+${INFORMATION}
+
 [STORE_LOG]
 enable: on
 store_queues: memory

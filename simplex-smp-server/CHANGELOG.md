@@ -1,7 +1,8 @@
 <!-- https://developers.home-assistant.io/docs/add-ons/presentation#keeping-a-changelog -->
 
 ## v7.0.1
-Upstream [SimpleX SMP v7.0.1](https://github.com/simplex-chat/simplexmq/releases/tag/v7.0.1)
+- Upstream [SimpleX SMP v7.0.1](https://github.com/simplex-chat/simplexmq/releases/tag/v7.0.1)
+- Optional server information: operator, countries, website, contacts and hosting
 
 ## v6.5.0
 Upstream [SimpleX SMP v6.5.0](https://github.com/simplex-chat/simplexmq/releases/tag/v6.5.0)
