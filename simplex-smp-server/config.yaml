@@ -1,6 +1,6 @@
 # https://developers.home-assistant.io/docs/add-ons/configuration#add-on-config
 name: SimpleX SMP Server
-version: "6.5.0"
+version: "7.0.1"
 slug: simplex-smp-server
 description: Message relay server for SimpleX Chat
 url: "https://github.com/ed-asriyan/hassio-simplex/tree/master/simplex-smp-server"
