@@ -1,5 +1,5 @@
 # https://developers.home-assistant.io/docs/add-ons/configuration#add-on-dockerfile
-FROM simplexchat/xftp-server:v7.0.1
+FROM simplexchat/xftp-server:v7.1.0
 
 LABEL \
     org.opencontainers.image.title="Home Assistant Add-on: SimpleX XFTP Server" \
